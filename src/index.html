@@ -11,6 +11,38 @@
 
 <body class="dark">
   <app-root></app-root>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      const overlay_m = document.querySelector('#overlay_m');
+      const modal = document.querySelector('#modal');
+
+    });
+
+    function modal_open(value) {
+      const modalCl = modal.classList
+      const overlayCl = overlay_m
+
+      if (value) {
+        overlayCl.classList.remove('hidden')
+        setTimeout(() => {
+          modalCl.remove('opacity-0')
+          modalCl.remove('-translate-y-full')
+          modalCl.remove('scale-150')
+        }, 100);
+      } else {
+        modalCl.add('-translate-y-full')
+        setTimeout(() => {
+          modalCl.add('opacity-0')
+          modalCl.add('scale-150')
+        }, 100);
+        setTimeout(() => overlayCl.classList.add('hidden'), 300);
+      }
+    }
+  </script>
+
 </body>
 
 </html>
